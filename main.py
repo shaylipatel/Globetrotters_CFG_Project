@@ -37,9 +37,9 @@ def start():
 
     print('What state in the United States will you fly out to?')
     # convert the player's input() to lower_case
-    answer = input(">").title()
+    answer = input(">").lower()
 
-    if "california" == answer:
+    if answer == 'california':
         California()
     else:
         print('You decide to fly to', answer, '.')

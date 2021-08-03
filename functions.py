@@ -1,3 +1,5 @@
+from main import start
+
 # function to asks the user if they want to play again
 def play_again():
     print("\nDo you want to play again? (y or n)")
