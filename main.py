@@ -1,6 +1,7 @@
-from functions import play_again
+from functions import introduction_qs, play_again
 from decorators import instructions
 
+introduction_qs()
 
 def California():
     print("\nYou have arrived in California!")
