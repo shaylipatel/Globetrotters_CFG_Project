@@ -1,7 +1,6 @@
 from main import start
 
-# a bit of fun at the beginning to get the game going:
-
+# a bit of fun at the beginning to get the game going, and add in more steps, extending it:
 def introduction_qs():
     answer = input("The first item required for this game of wits is COURAGE. \nDo you have a heart of solid gold and are you ready to take on the search for Ada Lovelace? (yes/no) ")
     if answer.lower().strip() == 'yes':
