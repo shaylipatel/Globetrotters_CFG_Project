@@ -1,8 +1,8 @@
 from functions import introduction_qs, play_again
-from decorators import instructions
+from decorators import instructions, london_welcome, california_welcome
 
 def California():
-    print("\nYou have arrived in California!")
+    print("\nYou have arrived in California!") # could have california_welcome() function in place of this line
     print("You see three people and decide to approach one of them in hopes to find a clue. Who do you approach")
     print("1). Take some diamonds and go through the door.")
     print("2). Just go through the door.")
@@ -31,7 +31,8 @@ def start():
     # use decorators
     # following the bad guy, must used hints to follow them and track them down ?? >> why ?? justice idk
 
-    print("You are currently in London, UK.")
+    london_welcome()
+    #print("You are currently in London, UK.")
 
     # more text to describe the situation ??
     print("You see three people. You decide to approach one of them in hopes to track down [ enter name ].")
@@ -41,6 +42,7 @@ def start():
     answer = input(">").lower()
 
     if answer == 'california':
+        california_welcome()
         California()
     else:
         print('You decide to fly to', answer, '.')
