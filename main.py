@@ -1,8 +1,6 @@
 from functions import introduction_qs, play_again
 from decorators import instructions
 
-introduction_qs()
-
 def California():
     print("\nYou have arrived in California!")
     print("You see three people and decide to approach one of them in hopes to find a clue. Who do you approach")
@@ -23,6 +21,8 @@ def California():
 def start():
 
     instructions()
+    
+    introduction_qs()
 
     name = str(input('Please input your name: Agent '))
     print("'Hello Agent", name.title(), "you have been selected for a secret mission.'")
