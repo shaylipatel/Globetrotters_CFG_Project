@@ -86,8 +86,11 @@ Cairo = Location(
 
 # incorrect location info
 incorrect_location_clues = {1: 'I haven\'t seen who you are looking for',
-                                 2: 'I don\'t know what you are talking about',
-                                 3: 'You are in the wrong place, buddy!'}
+                            2: 'I don\'t know what you are talking about',
+                            3: 'You are in the wrong place, buddy!'}
+
+
+
 Barca = Location(
     'Barcalona',
     '41.3851°N, 2.1734°E',
@@ -135,7 +138,7 @@ Tokyo = Location(
 # choice tree
 # First Location Choice
 London.next_location(
-    [Singapore, London, Barca, Rio],
+    ['Singapore','London', 'Barca','Rio'],
     'Singapore',
     Barca,
     Rio
@@ -143,7 +146,7 @@ London.next_location(
 
 # Second Location Choice
 Singapore.next_location(
-    [San_Fran, Singapore,Reykjavik,Tokyo],
+    ['San Francisco, USA', 'Singapore','Reykjavik, Iceland','Tokyo, Japan'],
     'San Francisco',
     Reykjavik,
     Tokyo
@@ -151,7 +154,7 @@ Singapore.next_location(
 
 # Third Location Choice
 San_Fran.next_location(
-    [Delhi, Singapore, Tokyo, Barca ],
+    ['Delhi, India', 'Singapore', 'Tokyo, Japan', "Barcalona, Spain "],
     'Delhi',
     Tokyo,
     Barca
@@ -159,7 +162,7 @@ San_Fran.next_location(
 
 # Fourth Location Choice
 Delhi.next_location(
-    [Cairo, Delhi, Rio, Reykjavik],
+    ['Cairo, Egypt', 'Delhi, India', 'Rio de Janeiro, Brazil','Reykjavik, Iceland'],
     'Cairo',
     Rio,
     Reykjavik
