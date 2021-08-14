@@ -11,7 +11,7 @@ def start():
 
     london_welcome()  # this works in decorators file but not here... ??
 
-    correct_route[1].get_facts()  # help!
+    correct_route[1].location_fac()  # help! # i changed get_facts() to location_fac() and think it works now
 
 def main_logic():
     def choose_landmark(dict, list):
