@@ -24,7 +24,7 @@ def introduction_qs():
         print("You're not ready for this important mission. Go back and learn the refining process and and try again next year Goldsmith.")
         play_again()
 
-introduction_qs()
+# introduction_qs()
 
 
 
