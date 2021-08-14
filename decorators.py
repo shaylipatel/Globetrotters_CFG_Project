@@ -18,6 +18,9 @@ def instructions():
 def london_welcome():
     print('Welcome to sunny London! \n…where the sun shines in between the bursts of rain! Follow the clues to figure out which city Ada went to next.')
 
+@text_wrapper
+def singapore_welcome():
+    print('Welcome to Singapore! \nThe city where summer resides all year long with breathtaking skyline views at night of buildings lit to the nines!')
 
 @text_wrapper
 def san_fran_welcome():
