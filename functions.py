@@ -48,6 +48,8 @@ def play_again():
 
     if answer == 'y' or answer == 'yes':
         # if player typed "yes" or "y" start the game from the beginning
+        # there was a circular dependency issue with this if statement - start() function can only be accessed within
+        # this module only by placing import statement within the if statement otherwise logic won't work
         from main import start
         start()
     else:
