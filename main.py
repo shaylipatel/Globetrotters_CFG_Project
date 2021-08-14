@@ -5,14 +5,15 @@ import time
 
 
 def start():
-##how to run these sequentially?
-   instructions()  # this works in decorators file but not here... ??
+   
+   instructions()  # Call the function instructions() to give tell the user how to play.
+   
+   introduction_qs()  # Call the function introduction_qs() to give the user a warm up exercise to make sure they are ready to play!
 
-   introduction_qs()
-
-   london_welcome()  # this works in decorators file but not here... ??
-
-   correct_route[0].location_facts()  # i changed get_facts() to location_facts() and it works now
+   london_welcome() # Call the function london_welcome(), it welcomes the user to the first location... London!
+   print('=' * 120)
+   correct_route[0].location_facts()  # Displays facts about London to the user.
+   print('=' * 120)
 
 
    def main_logic():
@@ -23,15 +24,48 @@ def start():
                 break
             elif int(choice) in dict.keys():
                 print('{}: {}'.format(list[int(choice) - 1], dict[int(choice)]))
+                break
+            # add some exception handling here
+                  
 
       def choose_location(location):
         while True:
             for next_location in location.location_list:
                 print(next_location)
             choice = input('Where would you like to go? ').title()
-            if choice == location.correct_location:
+            if choice.title() == location.correct_location:
+                # Location == Singapore
+                if choice.title() == 'Singapore':
+                    singapore_welcome()
+                    print('=' * 120)
+                    correct_route[1].location_facts()
+                    print('=' * 120)
+                    break
 
-                break
+                # Location == San Francisco
+                elif choice.title() == 'San Francisco':
+                    san_fran_welcome()
+                    print('=' * 120)
+                    correct_route[2].location_facts()
+                    print('=' * 120)
+                    break
+
+                # Location == Cairo
+                elif choice.title() == 'Cairo':
+                    cairo_welcome()
+                    print('=' * 120)
+                    correct_route[4].location_facts()
+                    print('=' * 120)
+                    break
+
+                # Location == Delhi
+                elif choice.title() == 'Delhi':
+                    india_welcome()
+                    print('=' * 120)
+                    correct_route[3].location_facts()
+                    print('=' * 120)
+                    break
+                  
             elif choice == location.incorrect_landmark1.name:
                 incorrect_landmark = location.incorrect_landmark1
             elif choice == location.incorrect_landmark2.name:
