@@ -1,6 +1,6 @@
 from functions import introduction_qs, play_again
 from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, india_welcome
-from location_data import Location
+from location_data import correct_route
 
 
 def start():
