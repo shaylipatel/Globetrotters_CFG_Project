@@ -1,5 +1,5 @@
-#from main import start
-
+# from main import start
+# from main import play_again
 
 # warm up exercise
 def introduction_qs():
@@ -48,6 +48,7 @@ def play_again():
 
     if answer == 'y' or answer == 'yes':
         # if player typed "yes" or "y" start the game from the beginning
+        from main import start
         start()
     else:
         # if user types anything besides "yes" or "y", exit() the program
