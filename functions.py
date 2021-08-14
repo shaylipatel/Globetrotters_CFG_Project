@@ -5,7 +5,7 @@
 def introduction_qs():
     name = str(input('Please input your name: Agent '))
     answer = input("Hello Agent " + name.title() + ",the first item required for this game of wits is COURAGE. \nDo you have a heart of solid gold and are you ready to take on the search for Ada Lovelace? (yes/no) ")
-    if answer.lower().strip() == 'yes':
+    if answer.lower().strip() == 'yes' or answer.lower().strip() == 'y':
         answer = input(("Excellent! A half-worthy candidate. \nThe second item required for this mission is an INTELLECT as sharp as the Kohinoor diamond. Is this something you possess young Philosopher? (yes/no) "))
         if answer.lower().strip() == 'yes':
             answer = input("The first thing to determine is where the trail starts... \nWhere would the world's first computer programmer start her jounrey... and so where should you? London, New York or Paris? \n")

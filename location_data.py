@@ -14,11 +14,11 @@ class Location:
 
     def location_facts(self):
         print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP))
-    def next_location(self, location_list, correct_location,incorrect_landmarks1,incorrect_landmarks2):
+    def next_location(self, location_list, correct_location,incorrect_landmark1,incorrect_landmark2):
         self.location_list = location_list
         self.correct_location = correct_location
-        self.incorrect_landmarks1 = incorrect_landmarks1
-        self.incorrect_landmarks2 = incorrect_landmarks2
+        self.incorrect_landmark1 = incorrect_landmark1
+        self.incorrect_landmark2 = incorrect_landmark2
 
 # correct route location info
 London = Location(
@@ -65,7 +65,7 @@ Delhi = Location(
     "UTC+5.30 (India Standard Time)",
     "Hindi, English, Punkabi, Urdu",
     7900,
-    ['India Gate','Qutub Minar','Humayun\'s Tomb'],
+    ['1. India Gate','2. Qutub Minar','3. Humayun\'s Tomb'],
     {1: 'Hosts one of the oldest universities in the world, founded in 975 CE',
      2: 'The largest city in Africa and the Middle East',
      3: 'Home to the only remaining ancient wonder of the world'}
@@ -78,7 +78,7 @@ Cairo = Location(
     "UTC+2 (Egypt Standard Time)",
     "Arabic",
     3587,
-    ['Pyramids of Giza','Great Sphinx',	'Coptic Cairo'],
+    ['1. Pyramids of Giza','2. Great Sphinx',	'3. Coptic Cairo'],
     {1: 'They were seen earlier today in Old Cairo!',
      2: 'They were seen in the historic district of Cairo',
      3: 'You have found Ada Lovelace!'}
@@ -98,7 +98,7 @@ Barca = Location(
     'UTC+2 (Central European Summer Time)',
     'Catalan, Spanish',
     29600,
-    ['Basilica of the Sagrada Familia','Casa Batllo','Palace of Catalan Music'],
+    ['1. Basilica of the Sagrada Familia','2. Casa Batllo','3. Palace of Catalan Music'],
     incorrect_location_clues
 )
 
@@ -109,7 +109,7 @@ Reykjavik = Location(
     'UTC00 (Greenwich Mean Time)',
     'Icelandic',
     66945,
-    ['Perlan','Hallgrimskirkja','Videy Island'],
+    ['1. Perlan','2. Hallgrimskirkja','3. Videy Island'],
     incorrect_location_clues
 )
 
@@ -120,7 +120,7 @@ Rio = Location(
     'UTC-3 (Brasilia Standard Time)',
     'Brazilian Portuguese',
     11032,
-    ['Christ the Redeemer','Copacabana','Ipanema'],
+    ['1. Christ the Redeemer','2. Copacabana','3. Ipanema'],
     incorrect_location_clues
 )
 
@@ -131,14 +131,14 @@ Tokyo = Location(
     'UTC+09:00 (Japan Standard Time)',
     'Japanese',
     40247,
-    ['Tokyo National Museum','Senso-ji Temple','Tokyo Skytree'],
+    ['1. Tokyo National Museum','2. Senso-ji Temple','3. Tokyo Skytree'],
     incorrect_location_clues
 )
 
 # choice tree
 # First Location Choice
 London.next_location(
-    ['Singapore','London', 'Barca','Rio'],
+    ['Singapore','London, UK', 'Barcalona, Spain','Rio de Janeiro, Brazil'],
     'Singapore',
     Barca,
     Rio

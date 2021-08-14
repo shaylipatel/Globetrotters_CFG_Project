@@ -4,16 +4,16 @@ from location_data import correct_route
 
 
 def start():
-# how to run these sequentially?
+##how to run these sequentially?
     instructions()  # this works in decorators file but not here... ??
 
     introduction_qs()
 
     london_welcome()  # this works in decorators file but not here... ??
 
-    London.get_facts()  # help!
+    correct_route[1].get_facts()  # help!
 
-
+def main_logic():
     def choose_landmark(dict, list):
         while True:
             choice = input('Where would you like to go? ')
@@ -22,44 +22,50 @@ def start():
             elif int(choice) in dict.keys():
                 print('{}: {}'.format(list[int(choice) - 1], dict[int(choice)]))
 
-    def choose_location(list, globe_index):
+    def choose_location(location):
         while True:
+            for next_location in location.location_list:
+                print(next_location)
             choice = input('Where would you like to go? ')
-            correct_location = globe_index + 1
-            if choice == str(list[correct_location]):
+            if choice == location.correct_location:
                 break
-            elif choice == globe_index:
-                choose_landmark(dict)
+            elif choice == location.incorrect_landmark1.name:
+                incorrect_landmark = location.incorrect_landmark1
+            elif choice == location.incorrect_landmark2.name:
+                incorrect_landmark = location.incorrect_landmark2
+            if incorrect_landmark == location.incorrect_landmark1 or incorrect_landmark ==location.incorrect_landmark2:
+                for landmark in incorrect_landmark.landmarks:
+                    print (landmark)
 
+                choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
 
-    clues = [London_clues, Singapore_clues, San_Fran_clues]
 
     for location in correct_route:
         route_index = correct_route.index(location)
         for landmark in location.landmarks:
             print(landmark)
         print('To move to the next location, enter NEXT')
-        choose_landmark(clues[route_index], location)
-        for location in location_choices[globe_index]:
-            print(location)
-        choose_location(correct_route, route_index)
+        choose_landmark(location.clues, location.landmarks)
+        choose_location(location)
 
 
-    # more text to describe the situation ??
-    print("You see three people. You decide to approach one of them in hopes to track down [ enter name ].")
-
-    print('What state in the United States will you fly out to?')
-    # convert the player's input() to lower_case
-    answer = input(">").lower()
-
-    if answer == 'california':
-        california_welcome()
-        California()
-    else:
-        print('You decide to fly to', answer, '.')
-        print(
-            'Once you arrive there and come off the plane you notice [ enter something ]. You realise you are in the wrong place. You swiftly return to London to look for more clues.')
-
-
+#     # more text to describe the situation ??
+#     print("You see three people. You decide to approach one of them in hopes to track down [ enter name ].")
+#
+#     print('What state in the United States will you fly out to?')
+#     # convert the player's input() to lower_case
+#     answer = input(">").lower()
+#
+#     if answer == 'california':
+#         california_welcome()
+#         California()
+#     else:
+#         print('You decide to fly to', answer, '.')
+#         print(
+#             'Once you arrive there and come off the plane you notice [ enter something ]. You realise you are in the wrong place. You swiftly return to London to look for more clues.')
+#
+#
 # start the game
-start()
+# start()
+
+main_logic()
