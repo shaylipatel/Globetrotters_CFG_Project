@@ -16,7 +16,7 @@ def start():
 def main_logic():
     def choose_landmark(dict, list):
         while True:
-            choice = input('Where would you like to go? ')
+            choice = input('Where would you like to go? ').title()
             if choice.upper() == 'NEXT':
                 break
             elif int(choice) in dict.keys():
@@ -26,7 +26,7 @@ def main_logic():
         while True:
             for next_location in location.location_list:
                 print(next_location)
-            choice = input('Where would you like to go? ')
+            choice = input('Where would you like to go? ').title()
             if choice == location.correct_location:
                 break
             elif choice == location.incorrect_landmark1.name:
