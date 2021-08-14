@@ -1,4 +1,4 @@
-from functions import introduction_qs, play_again
+from functions import introduction_qs
 from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, india_welcome, singapore_welcome
 from location_data import correct_route
 import time
@@ -43,7 +43,7 @@ def start():
                     break
 
                 # Location == San Francisco
-                elif choice.title() == 'San Francisco':
+                if choice.title() == 'San Francisco':
                     san_fran_welcome()
                     print('=' * 120)
                     correct_route[2].location_facts()
@@ -51,7 +51,7 @@ def start():
                     break
 
                 # Location == Cairo
-                elif choice.title() == 'Cairo':
+                if choice.title() == 'Cairo':
                     cairo_welcome()
                     print('=' * 120)
                     correct_route[4].location_facts()
@@ -59,7 +59,7 @@ def start():
                     break
 
                 # Location == Delhi
-                elif choice.title() == 'Delhi':
+                if choice.title() == 'Delhi':
                     india_welcome()
                     print('=' * 120)
                     correct_route[3].location_facts()

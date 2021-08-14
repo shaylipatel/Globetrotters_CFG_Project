@@ -55,4 +55,5 @@ def play_again():
     else:
         # if user types anything besides "yes" or "y", exit() the program
         print('Goodbye!')
+        exit()
 
