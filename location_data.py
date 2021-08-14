@@ -13,7 +13,7 @@ class Location:
 
 
     def location_facts(self):
-        print("Facts about {} \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP))
+        print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP))
     def next_location(self, location_list, correct_location,incorrect_landmarks1,incorrect_landmarks2):
         self.location_list = location_list
         self.correct_location = correct_location
