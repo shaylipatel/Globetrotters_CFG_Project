@@ -1,33 +1,36 @@
 from functions import introduction_qs, play_again
 from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, india_welcome
 from location_data import correct_route
+import time
 
 
 def start():
 ##how to run these sequentially?
-    instructions()  # this works in decorators file but not here... ??
+   instructions()  # this works in decorators file but not here... ??
 
-    introduction_qs()
+   introduction_qs()
 
-    london_welcome()  # this works in decorators file but not here... ??
+   london_welcome()  # this works in decorators file but not here... ??
 
-    correct_route[0].location_facts()  # i changed get_facts() to location_facts() and it works now
+   correct_route[0].location_facts()  # i changed get_facts() to location_facts() and it works now
 
-def main_logic():
-    def choose_landmark(dict, list):
-        while True:
+
+   def main_logic():
+      def choose_landmark(dict, list):
+         while True:
             choice = input('Where would you like to go? ').title()
             if choice.upper() == 'NEXT':
                 break
             elif int(choice) in dict.keys():
                 print('{}: {}'.format(list[int(choice) - 1], dict[int(choice)]))
 
-    def choose_location(location):
+      def choose_location(location):
         while True:
             for next_location in location.location_list:
                 print(next_location)
             choice = input('Where would you like to go? ').title()
             if choice == location.correct_location:
+
                 break
             elif choice == location.incorrect_landmark1.name:
                 incorrect_landmark = location.incorrect_landmark1
@@ -40,7 +43,7 @@ def main_logic():
                 choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
 
 
-    for location in correct_route:
+      for location in correct_route:
         route_index = correct_route.index(location)
         for landmark in location.landmarks:
             print(landmark)
@@ -66,6 +69,8 @@ def main_logic():
 #
 #
 # start the game
-# start()
 
-main_logic()
+
+   main_logic()
+start()
+
