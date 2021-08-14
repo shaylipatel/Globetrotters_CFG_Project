@@ -34,15 +34,15 @@ def start():
 
     clues = [London_clues, Singapore_clues, San_Fran_clues]
 
-    for location in globe:
-        globe_index = globe.index(location)
-        for landmark in location:
+    for location in correct_route:
+        route_index = correct_route.index(location)
+        for landmark in location.landmarks:
             print(landmark)
         print('To move to the next location, enter NEXT')
-        choose_landmark(clues[globe_index], location)
+        choose_landmark(clues[route_index], location)
         for location in location_choices[globe_index]:
             print(location)
-        choose_location(correct_route, globe_index)
+        choose_location(correct_route, route_index)
 
 
     # more text to describe the situation ??
