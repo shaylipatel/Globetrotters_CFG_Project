@@ -2,7 +2,7 @@ import io
 import sys
 import unittest
 from functions import play_again
-
+# a slightly different play_again() function was used for this code, need to add it
 
 class TestStringMethods(unittest.TestCase):
     def test_play_again(self):
