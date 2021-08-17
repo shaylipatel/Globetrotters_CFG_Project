@@ -1,5 +1,5 @@
 import requests
-
+import config
 
 class Location:
 
