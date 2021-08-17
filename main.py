@@ -12,7 +12,8 @@ def start():
 
    london_welcome() # Call the function london_welcome(), it welcomes the user to the first location... London!
    print('=' * 120)
-   correct_route[0].location_facts()  # Displays facts about London to the user.
+   correct_route[0].location_facts() # Displays facts about London to the user.
+   correct_route[0].get_weather()
    print('=' * 120)
 
 
@@ -39,6 +40,7 @@ def start():
                     singapore_welcome()
                     print('=' * 120)
                     correct_route[1].location_facts()
+                    correct_route[1].get_weather()
                     print('=' * 120)
                     break
 
@@ -47,6 +49,7 @@ def start():
                     san_fran_welcome()
                     print('=' * 120)
                     correct_route[2].location_facts()
+                    correct_route[2].get_weather()
                     print('=' * 120)
                     break
 
@@ -55,6 +58,7 @@ def start():
                     cairo_welcome()
                     print('=' * 120)
                     correct_route[4].location_facts()
+                    correct_route[4].get_weather()
                     print('=' * 120)
                     break
 
@@ -63,6 +67,7 @@ def start():
                     india_welcome()
                     print('=' * 120)
                     correct_route[3].location_facts()
+                    correct_route[3].get_weather()
                     print('=' * 120)
                     break
                   

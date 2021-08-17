@@ -1,3 +1,5 @@
+import requests
+import config
 
 class Location:
 
@@ -10,10 +12,23 @@ class Location:
         self.GDP = GDP
         self.landmarks = landmarks
         self.clues = clues
+        self.weather_temp = 0
 
 
     def location_facts(self):
         print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP))
+
+
+    def get_weather(self):
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={config.api_key}&units=metric"
+
+        response = requests.get(url)
+        result = response.json()
+
+        for key, value in result.items():
+            if key == 'main':
+                print(f'Temperature: {value["temp"]} Celsius')
+
     def next_location(self, location_list, correct_location,incorrect_landmark1,incorrect_landmark2):
         self.location_list = location_list
         self.correct_location = correct_location
