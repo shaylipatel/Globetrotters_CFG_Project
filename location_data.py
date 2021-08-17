@@ -27,7 +27,7 @@ class Location:
 
         for key, value in result.items():
             if key == 'main':
-                print(f'Temperature: {value["temp"]} Celsius')
+                print(f'Temperature: {value["temp"]:1.0f} Celsius')
 
     def next_location(self, location_list, correct_location,incorrect_landmark1,incorrect_landmark2):
         self.location_list = location_list
