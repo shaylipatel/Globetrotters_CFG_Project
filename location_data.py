@@ -12,7 +12,7 @@ class Location:
         self.GDP = GDP
         self.landmarks = landmarks
         self.clues = clues
-        self.weather_temp = 0
+
 
 
     def location_facts(self):
