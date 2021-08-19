@@ -16,18 +16,19 @@ class Location:
 
 
     def location_facts(self):
-        print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP))
+        print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}\nTemperature: {} Celsius ".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP, self.temp))
 
 
     def get_weather(self):
         url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={config.api_key}&units=metric"
-
         response = requests.get(url)
         result = response.json()
 
         for key, value in result.items():
             if key == 'main':
-                print(f'Temperature: {value["temp"]:1.0f}˚Celsius')
+                self.temp = value["temp"]
+                # print(self.temp)
+                # print(f'Temperature: {value["temp"]:1.0f}˚Celsius')
 
     def next_location(self, location_list, correct_location,incorrect_landmark1,incorrect_landmark2):
         self.location_list = location_list
@@ -183,11 +184,21 @@ Delhi.next_location(
     Reykjavik
 )
 
+# get weather
+London.get_weather()
+Singapore.get_weather()
+San_Fran.get_weather()
+Delhi.get_weather()
+Cairo.get_weather()
+
+
 
 correct_route = [London, Singapore, San_Fran, Delhi, Cairo]
+
 
 # for location in correct_route:
 #     print(location.name)
 #     for landmark in location.landmarks:
 #         print(landmark)
 #     print(location.location_facts())
+

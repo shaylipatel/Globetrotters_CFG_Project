@@ -40,7 +40,7 @@ def cairo_welcome():
 
 
 @text_wrapper
-def india_welcome():
+def delhi_welcome():
     print('Welcome to Delhi! \nThe street markets are lively, the colours vibrant and the food incredible. \nJust watch out for that Dehli Belly… it can’t get in the way of your mission!')
 
 
@@ -49,3 +49,5 @@ def india_welcome():
 # san_fran_welcome()
 # cairo_welcome()
 # india_welcome()
+
+welcome = [london_welcome(), singapore_welcome(),san_fran_welcome(), delhi_welcome(), cairo_welcome()]

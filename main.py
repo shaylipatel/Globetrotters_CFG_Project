@@ -1,7 +1,7 @@
 from functions import introduction_qs
-from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, india_welcome, singapore_welcome
+from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, delhi_welcome, singapore_welcome
 from location_data import correct_route
-import time
+# import time
 
 
 def start():
@@ -9,95 +9,76 @@ def start():
 
     introduction_qs()  # Call the function introduction_qs() to give the user a warm up exercise to make sure they are ready to play!
 
-    london_welcome()  # Call the function london_welcome(), it welcomes the user to the first location... London!
-    print('=' * 120)
-    correct_route[0].location_facts()  # Displays facts about London to the user.
-    correct_route[0].get_weather()
-    print('=' * 120)
-
-    def main_logic():
-        def choose_landmark(dict, list):
-            while True:
+def main_logic():
+    def choose_landmark(dict, list):
+        while True:
+            try:
                 choice = input('Where would you like to go? ').title()
                 if choice.upper() == 'NEXT':
                     break
+
                 elif int(choice) in dict.keys():
                     print('{}: {}'.format(list[int(choice) - 1], dict[int(choice)]))
-                    break
-                # add some exception handling here
+                else:
+                    raise AttributeError
+            except AttributeError:
+                print('Invalid landmark, please try again!')
 
-        def choose_location(location):
-            while True:
-              try:
-                for next_location in location.location_list:
-                    print(next_location)
-
+    def choose_location(location):
+        while True:
+            for next_location in location.location_list:
+                print(next_location)
+            try:
                 choice = input('Where would you like to go? ').title()
 
                 if choice.title() == location.correct_location:
-                    # Location == Singapore
-                    if choice.title() == 'Singapore':
-                        singapore_welcome()
-                        print('=' * 120)
-                        correct_route[1].location_facts()
-                        correct_route[1].get_weather()
-                        print('=' * 120)
-                        break
-
-                    # Location == San Francisco
-                    if choice.title() == 'San Francisco':
-                        san_fran_welcome()
-                        print('=' * 120)
-                        correct_route[2].location_facts()
-                        correct_route[2].get_weather()
-                        print('=' * 120)
-                        break
-
-                    # Location == Cairo
-                    if choice.title() == 'Cairo':
-                        cairo_welcome()
-                        print('=' * 120)
-                        correct_route[4].location_facts()
-                        correct_route[4].get_weather()
-                        print('=' * 120)
-                        break
-
-                    # Location == Delhi
-                    if choice.title() == 'Delhi':
-                        india_welcome()
-                        print('=' * 120)
-                        correct_route[3].location_facts()
-                        correct_route[3].get_weather()
-                        print('=' * 120)
-                        break
-
+                    break
                 elif choice == location.incorrect_landmark1.name:
                     incorrect_landmark = location.incorrect_landmark1
                 elif choice == location.incorrect_landmark2.name:
                     incorrect_landmark = location.incorrect_landmark2
+                else:
+                    raise AttributeError
                 if incorrect_landmark == location.incorrect_landmark1 or incorrect_landmark == location.incorrect_landmark2:
                     for landmark in incorrect_landmark.landmarks:
                         print(landmark)
-
+                    print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
                     choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
-              except AttributeError: # exception handling exits game to mitigate Attribute Error in location list and clues ending at Cairo
-                      print('GAME OVER!')
-                      exit() # without exit statement , creates an infinite loop.
+            except AttributeError: # exception handling exits game to mitigate Attribute Error in location list and clues ending at Cairo
+                print('INVALID ENTRY: please try again')
+                    # print('GAME OVER!')
+                    # exit() # without exit statement , creates an infinite loop.
+    def choose_wrapper(location):
+        if route_index == 0: #location.name == 'London':
+            london_welcome()
+        elif route_index == 1: #location.name == "Singapore":
+            singapore_welcome()
+        elif route_index == 2: #location.name == "San Francisco":
+            san_fran_welcome()
+        elif route_index == 3: #location.name == "Delhi":
+            delhi_welcome()
+        elif route_index == 4: #location.name == "Cairo":
+            cairo_welcome()
 
-
-
-        for location in correct_route:
-            route_index = correct_route.index(location)
-            for landmark in location.landmarks:
-                print(landmark)
-            print('To move to the next location, enter NEXT')
-            choose_landmark(location.clues, location.landmarks)
-            choose_location(location)
-
-    main_logic()
-
+    for location in correct_route:
+        route_index = correct_route.index(location)
+        choose_wrapper(location)
+        print('=' * 120)
+        print(location.location_facts())
+        print('=' * 120)
+        print('The following landmarks are in {}:'.format(location.name))
+        for landmark in location.landmarks:
+            print(landmark)
+        print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
+        choose_landmark(location.clues, location.landmarks)
+        print('Where would you like to travel to next?')
+        choose_location(location)
 
 start()
+main_logic()
+
+
+
     #     # more text to describe the situation ??
     #     print("You see three people. You decide to approach one of them in hopes to track down [ enter name ].")
     #
