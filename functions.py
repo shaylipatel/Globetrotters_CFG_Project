@@ -59,9 +59,11 @@ def play_again():
 
         
 
-from tkinter import *
 
-def graphics_box():
+from tkinter import *
+from location_data import correct_route
+
+def graphics_box(correct_route):
     #key down function
     def click():
         entered_text=textentry.get().title().strip()  # this will collect the text from the text box
@@ -91,11 +93,14 @@ def graphics_box():
     output = Text(window, width=40, height=6, wrap=WORD, background="white")
     output.grid(row=5, column=0, columnspan=2, sticky=N)
     #the dictionary
-    my_compdictionary = { #need to connect dictionary to clues dictionaries, and base it on choice of location
-        'Buckingham Palace': 'It is one of only three surviving city-states in the world',
-        'Tower Of London':'Bukit Timah Nature Reserve holds more species of trees than the entire North American continent',
-        'London Eye': 'The national language is Malay'
-        }
+    for location in correct_route:
+        clues = location.clues
+    my_compdictionary = clues
+        # { #need to connect dictionary to clues dictionaries, and base it on choice of location
+        # 'Buckingham Palace': 'It is one of only three surviving city-states in the world',
+        # 'Tower Of London':'Bukit Timah Nature Reserve holds more species of trees than the entire North American continent',
+        # 'London Eye': 'The national language is Malay'
+        # }
     #exit label
     Label (window, text="click to exit", bg="black",  fg="white", font="none 12 bold") .grid(row=6, column=0, sticky=N)
     #exit function:
@@ -107,5 +112,4 @@ def graphics_box():
     #run the main loop
     return window.mainloop()
 
-graphics_box()
-
+graphics_box(correct_route)
