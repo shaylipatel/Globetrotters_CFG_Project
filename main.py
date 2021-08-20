@@ -46,9 +46,8 @@ def main_logic():
                     choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
             except AttributeError: # exception handling exits game to mitigate Attribute Error in location list and clues ending at Cairo
                 print('INVALID ENTRY: please try again')
-                    # print('GAME OVER!')
-                    # exit() # without exit statement , creates an infinite loop.
-    def choose_wrapper(location):
+
+    def choose_decorator(location):
         if route_index == 0: #location.name == 'London':
             london_welcome()
         elif route_index == 1: #location.name == "Singapore":
@@ -62,7 +61,7 @@ def main_logic():
 
     for location in correct_route:
         route_index = correct_route.index(location)
-        choose_wrapper(location)
+        choose_decorator(location)
         print('=' * 120)
         print(location.location_facts())
         print('=' * 120)
@@ -73,6 +72,7 @@ def main_logic():
         choose_landmark(location.clues, location.landmarks)
         print('Where would you like to travel to next?')
         choose_location(location)
+
 
 start()
 main_logic()

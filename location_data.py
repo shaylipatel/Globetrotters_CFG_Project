@@ -13,10 +13,8 @@ class Location:
         self.landmarks = landmarks
         self.clues = clues
 
-
-
     def location_facts(self):
-        print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}\nTemperature: {} Celsius ".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP, self.temp))
+        print("Facts about {}: \nCoordinates: {} \nCountry: {} \nTime Zone: {} \nLanguages: {} \nGDP Per Capita: US ${}\nTemperature: {}˚Celsius ".format(self.name, self.coordinates, self.country, self.timezone, self.languages,self.GDP, self.temp))
 
 
     def get_weather(self):
@@ -27,8 +25,7 @@ class Location:
         for key, value in result.items():
             if key == 'main':
                 self.temp = value["temp"]
-                # print(self.temp)
-                # print(f'Temperature: {value["temp"]:1.0f}˚Celsius')
+
 
     def next_location(self, location_list, correct_location,incorrect_landmark1,incorrect_landmark2):
         self.location_list = location_list
