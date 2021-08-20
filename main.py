@@ -16,14 +16,16 @@ def main_logic():
                 choice = input('Where would you like to go? ').title()
                 if choice.upper() == 'NEXT':
                     break
-
                 elif int(choice) in dict.keys():
                     print('{}: {}'.format(list[int(choice) - 1], dict[int(choice)]))
+
                 else:
-                    raise AttributeError
-            except AttributeError:
+                    raise Exception
+            except:
                 print('Invalid landmark, please try again!')
 
+            if location.name == correct_route[4].name and int(choice) == 3:
+                break
     def choose_location(location):
         while True:
             for next_location in location.location_list:
@@ -38,14 +40,14 @@ def main_logic():
                 elif choice == location.incorrect_landmark2.name:
                     incorrect_landmark = location.incorrect_landmark2
                 else:
-                    raise AttributeError
+                    raise Exception
                 if incorrect_landmark == location.incorrect_landmark1 or incorrect_landmark == location.incorrect_landmark2:
                     for landmark in incorrect_landmark.landmarks:
                         print(landmark)
                     print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
                     choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
-            except AttributeError: # exception handling exits game to mitigate Attribute Error in location list and clues ending at Cairo
-                print('INVALID ENTRY: please try again')
+            except:
+                print('Invalid Entry: please try again')
 
     def choose_decorator(location):
         if route_index == 0: #location.name == 'London':
@@ -69,31 +71,17 @@ def main_logic():
         for landmark in location.landmarks:
             print(landmark)
         print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
+        print('=' * 120)
         choose_landmark(location.clues, location.landmarks)
+        if location.name == correct_route[4].name:
+            break
         print('Where would you like to travel to next?')
         choose_location(location)
 
 
+
 start()
 main_logic()
+print('TEST - You have reached the end')
 
-
-
-    #     # more text to describe the situation ??
-    #     print("You see three people. You decide to approach one of them in hopes to track down [ enter name ].")
-    #
-    #     print('What state in the United States will you fly out to?')
-    #     # convert the player's input() to lower_case
-    #     answer = input(">").lower()
-    #
-    #     if answer == 'california':
-    #         california_welcome()
-    #         California()
-    #     else:
-    #         print('You decide to fly to', answer, '.')
-    #         print(
-    #             'Once you arrive there and come off the plane you notice [ enter something ]. You realise you are in the wrong place. You swiftly return to London to look for more clues.')
-    #
-    #
-    # start the game
 
