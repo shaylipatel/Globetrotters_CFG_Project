@@ -2,13 +2,14 @@ import io
 import sys
 import unittest
 from functions import play_again
-# a slightly different play_again() function was used for this code, need to add it
+# this does not work
+# need to work on this !!!!
 
 class TestStringMethods(unittest.TestCase):
     def test_play_again(self):
         capturedOutput = io.StringIO()                  # Create StringIO object
         sys.stdout = capturedOutput                     #  and redirect stdout.
-        play_again('yes')                               # Call function.
+        play_again()                                    # Call function.
         self.assertEqual(capturedOutput.getvalue(), "The game will play again.\n") #check stdout output
 
 # print statements used to find issue
