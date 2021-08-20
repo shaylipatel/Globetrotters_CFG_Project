@@ -50,4 +50,5 @@ def delhi_welcome():
 # cairo_welcome()
 # india_welcome()
 
+if __name__ == '__main__': 
 welcome = [london_welcome(), singapore_welcome(),san_fran_welcome(), delhi_welcome(), cairo_welcome()]
