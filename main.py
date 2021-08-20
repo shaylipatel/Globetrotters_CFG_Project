@@ -35,6 +35,10 @@ def main_logic():
 
                 if choice.title() == location.correct_location:
                     break
+                elif choice == location.name:
+                    for landmark in location.landmarks:
+                        print(landmark)
+                    choose_landmark(location.clues, location.landmarks)
                 elif choice == location.incorrect_landmark1.name:
                     incorrect_landmark = location.incorrect_landmark1
                 elif choice == location.incorrect_landmark2.name:
@@ -46,6 +50,8 @@ def main_logic():
                         print(landmark)
                     print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
                     choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
+
+
             except:
                 print('Invalid Entry: please try again')
 

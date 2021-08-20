@@ -127,7 +127,7 @@ Reykjavik = Location(
 )
 
 Rio = Location(
-    'Rio de Janeiro',
+    'Rio De Janeiro',
     '22.9068° S, 43.1729° W',
     'Brazil',
     'UTC-3 (Brasilia Standard Time)',
