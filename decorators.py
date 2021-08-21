@@ -1,6 +1,7 @@
 #### INSTRUCTIONS AND WELCOME NOTES USING DECORATORS
 
 # We have used a decorator to emphasise the text that was important - so establishing the instructions and then making it very clear in informing the player of each location that they arrive in.
+
 def text_wrapper(func):
     def inner_wrapper():
         print("*" * 120)
