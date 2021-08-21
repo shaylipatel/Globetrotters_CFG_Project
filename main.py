@@ -1,6 +1,7 @@
 from functions import introduction_qs, winners_graphics_box
 from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, delhi_welcome, singapore_welcome
 from location_data import correct_route
+from colorama import Fore, Back, Style
 # import time
 
 
@@ -75,7 +76,8 @@ def main_logic():
         print('=' * 120)
         print('The following landmarks are in {}:'.format(location.name))
         for landmark in location.landmarks:
-            print(landmark)
+            print(Fore.BLACK + Back.WHITE + Style.BRIGHT + landmark)
+            print(Style.RESET_ALL)
         print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
         print('=' * 120)
         choose_landmark(location.clues, location.landmarks)
