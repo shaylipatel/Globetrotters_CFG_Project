@@ -1,17 +1,16 @@
 # from main import start
 # from main import play_again
+from tkinter import *
 
-# warm up exercise
+# warm up exercise - a series of if/else statements to get the player into how to play the game and have a bit of fun doing it.
 def introduction_qs():
     name = str(input('Please input your name: Agent '))
     answer = input("Hello Agent " + name.title() + ",the first item required for this game of wits is COURAGE. \nDo you have a heart of solid gold and are you ready to take on the search for Ada Lovelace? (yes/no) ")
     
     if answer.lower().strip() == 'yes' or answer.lower().strip() == 'y':
         answer = input(("Excellent! A half-worthy candidate. \nThe second item required for this mission is an INTELLECT as sharp as the Kohinoor diamond. Is this something you possess young Philosopher? (yes/no) "))
-        
         if answer.lower().strip() == 'yes' or answer.lower().strip() == 'y':
-            answer = input("The first thing to determine is where the trail starts... \nWhere would the world's first computer programmer start her journey... and so where should you? London, New York or Paris? \n")
-            
+            answer = input("The first thing to determine is where the trail starts... \nWhere would the world's first computer programmer start her journey... and so where should you? London, New York or Paris? \n")            
             if answer.lower().strip() == 'london':
                 # Correct location
                 print("Excellent choice! Proceed to London and begin the searching process... the clues are waiting... no dilly-dally-ing.")
@@ -24,7 +23,6 @@ def introduction_qs():
                 # Wrong location
                 print("The old compass has overshot a little... head 350km North-West and try again.")
                 play_again()
-               
             else: 
                 # If user enters a location which was not listed, the game exits.
                 print("You're not quite there yet Sherlock, do try again.")
@@ -35,8 +33,6 @@ def introduction_qs():
     else:
         print("You're not ready for this important mission. Go back and learn the refining process and and try again next year Goldsmith.")
         play_again()
-
-# introduction_qs()
 
 
 # Function to asks the user if they want to play again.
@@ -57,59 +53,55 @@ def play_again():
         print('Goodbye!')
         exit()
 
-        
+
+# final function once player has found the correct location
+def winners_graphics_box():
+    # key down function
+    def click():
+        entered_text = textentry.get().title().strip()  # this will collect the text from the text box, convert to title case and remove any spaces
+        output.delete(0.0, END)
+        # try/except to deal with any mistakes or wrongly inputted choices
+        try:
+            definition = my_compdictionary[entered_text]
+        except:
+            definition = "O Greedy One, there is no such treasure! Choose from RUBY, EMERALD or SAPPHIRE"
+        output.insert(END, definition)
+    # main window:
+    window = Tk()
+    window.title("Where is Ada Lovalace?")
+    window.configure(background="black")
+    # photo
+    photo1 = PhotoImage(file="globe.gif")
+    Label(window, image=photo1, bg="black").grid(row=0, column=0, sticky=N)
+    # create label
+    Label(window, text="CONGRATULATIONS!!! \nYou have traversed the world and found Ada Lovelace! An Agent worthy of the digits 007.", bg="black", fg="white", font="none 16 bold").grid(row=1, column=0, sticky=N)
+    Label(window, text="Choose a jewel from Ada's treasure chest of knowledge. Input your choice of RUBY, EMERALD or SAPPHIRE below:", bg="black", fg="white", font="none 10 bold").grid(row=2, column=0, sticky=N)
+    # create text entry box
+    textentry = Entry(window, width=30, bg="white")
+    textentry.grid(row=3, column=0, sticky=N)
+    # add a submit button
+    Button(window, text="SUBMIT", width=6, command=click).grid(row=4, column=0, sticky=N)
+    # create another label
+    Label(window, text="Ada bestows the following great wisdom upon you:", bg="black", fg="white", font="none 16 bold").grid(row=5, column=0, sticky=N)
+    # create an output text box
+    output = Text(window, width=90, height=8, wrap=WORD, background="white")
+    output.grid(row=6, column=0, columnspan=2, sticky=N)
+    # the dictionary - to provide advice based on choice inputted by player/user
+    my_compdictionary = {
+        'Ruby': 'Don’t Sacrifice Readability:  Whenever you’re writing a piece of code, you should think about what the next developer is going to find when looking at that piece of code. Write that piece of code with the mentality to make it easily understandable and as readable as you can. The ratio of time spent reading code versus writing code is well over 10-to-1. This means that you can save a lot of time in the long run by putting in a little more effort into making your code readable. In order to write readable code try to keep it as simple as possible. Write simple code that everyone can understand.',
+        'Emerald': 'Focus On The Business: Some developers are only interested in the technical aspects of their job. They don’t care about the business or the economic factors that justify their job’s existence. Other developers tend to be so focused on learning the tech stack that the business gets out of sight. It’s important to keep the business in mind. Why are you building this? Is what you’re working on creating value for the business or are you spending too much time on something that doesn’t really matter? It’s an important question that you should keep asking yourself.',
+        'Sapphire': 'Don’t Dive Straight Into the Code: Rushing into the code might seem exciting at first. However, that excitement might end up costing you a lot of time. When jumping straight into the coding part, you’ll eventually lose sight of the bigger picture. You need to plan and organize before you start coding. Think about problems that you might find along the way and how can you tackle them. How will you structure your code? What’s the reason that you’re going to implement this feature? These questions can make you more aware of the fact that there’s a lot to think about before writing code.'
+    }
+    # exit label
+    Label(window, text="Go forth boldly, O Wise One", bg="black", fg="white", font="none 12 bold").grid(row=7, column=0, sticky=N)
+    Label(window, text="click to exit", bg="black", fg="white", font="none 10 bold").grid(row=8, column=0, sticky=N)
+    # exit function:
+    def close_window():
+        window.destroy()  # ensure window is destroyed before program exited
+        exit()
+    # exit button:
+    Button(window, text="Exit", width=14, command=close_window).grid(row=9, column=0, sticky=N)
+    # run the main loop (to run the window)
+    return window.mainloop()  
 
 
-# from tkinter import *
-# from location_data import correct_route
-#
-# def graphics_box(correct_route):
-#     #key down function
-#     def click():
-#         entered_text=textentry.get().title().strip()  # this will collect the text from the text box
-#         output.delete(0.0, END)
-#         try:
-#             definition = my_compdictionary[entered_text]
-#         except:
-#             definition = "sorry there is no such location, please try again"
-#         output.insert(END, definition)
-#     ##### main:
-#     window = Tk()
-#     window.title("Where is Ada Lovalace?")
-#     window.configure(background="black")
-#     #### My Photo
-#     photo1 = PhotoImage(file="globe.gif")
-#     Label (window, image=photo1,bg="black") .grid(row=0, column=0, sticky=N)
-#     #create label
-#     Label (window, text="Which location would you like to go to?", bg="black",  fg="white", font="none 12 bold") .grid(row=1, column=0, sticky=N)
-#     #create text entry box
-#     textentry = Entry(window, width=20, bg="white")
-#     textentry.grid(row=2, column=0, sticky=N)
-#     #add a submit button
-#     Button(window, text="SUBMIT", width=6, command=click) .grid(row=3, column=0, sticky=N)
-#     #create another label
-#     Label (window, text="\nClue:", bg="black",  fg="white", font="none 12 bold") .grid(row=4, column=0, sticky=N)
-#     # create an output text box
-#     output = Text(window, width=40, height=6, wrap=WORD, background="white")
-#     output.grid(row=5, column=0, columnspan=2, sticky=N)
-#     #the dictionary
-#     for location in correct_route:
-#         clues = location.clues
-#     my_compdictionary = clues
-#         # { #need to connect dictionary to clues dictionaries, and base it on choice of location
-#         # 'Buckingham Palace': 'It is one of only three surviving city-states in the world',
-#         # 'Tower Of London':'Bukit Timah Nature Reserve holds more species of trees than the entire North American continent',
-#         # 'London Eye': 'The national language is Malay'
-#         # }
-#     #exit label
-#     Label (window, text="click to exit", bg="black",  fg="white", font="none 12 bold") .grid(row=6, column=0, sticky=N)
-#     #exit function:
-#     def close_window():
-#         window.destroy()
-#         exit()
-#     #exit button:
-#     Button(window, text="Exit", width=14, command=close_window) .grid(row=7, column=0, sticky=N)
-#     #run the main loop
-#     return window.mainloop()
-#
-# graphics_box(correct_route)
