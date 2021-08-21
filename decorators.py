@@ -13,15 +13,7 @@ def text_wrapper(func):
 def instructions():
     print('Welcome to the search for Ada Lovelace. With her vast knowledge of mathematics and her vision of what was possible \nfor the future of machines, she is today known as the first programmer. However Ada has been travelling around the \nworld for many years, from country to country. As a young budding programmer, your job is to find Ada, and see what \nknowledge and wisdom she is willing to impart to you.\n \nDo you think you have what it takes to find the elusive Ada…? \nFollow the trail of clues she has left behind to see if you can outwit the world’s first ever computer programmer. \n')
     print('Instructions: \n1. You will start in London. Use the clues to resolve where Ada travelled to next. Pick the correct city and you \nwill be transported there to continue the search. Pick the wrong city and you will return to London to try again \n– and try harder. \n2. Follow the search from city to city. If your intellect matches that of Ada, you may be lucky enough to meet her \nat the end and win the game.')
-
-# instruction() function repeated, but the decoator is not called => for the unittests
-def instructions1():
-    x = 'Welcome to the search for Ada Lovelace. With her vast knowledge of mathematics and her vision of what was possible \nfor the future of machines, she is today known as the first programmer. However Ada has been travelling around the \nworld for many years, from country to country. As a young budding programmer, your job is to find Ada, and see what \nknowledge and wisdom she is willing to impart to you.\n \nDo you think you have what it takes to find the elusive Ada…? \nFollow the trail of clues she has left behind to see if you can outwit the world’s first ever computer programmer. \n'
-    y = 'Instructions: \n1. You will start in London. Use the clues to resolve where Ada travelled to next. Pick the correct city and you \nwill be transported there to continue the search. Pick the wrong city and you will return to London to try again \n– and try harder. \n2. Follow the search from city to city. If your intellect matches that of Ada, you may be lucky enough to meet her \nat the end and win the game.'
-    z = x + y
-    print(z)
-    return z
-    
+  
 @text_wrapper
 def london_welcome():
     print('Welcome to sunny London! \n…where the sun shines in between the bursts of rain! Follow the clues to figure out which city Ada went to next.')
@@ -50,7 +42,7 @@ if __name__ == '__main__':
     london_welcome()
     san_fran_welcome()
     cairo_welcome()
-    india_welcome()
+    delhi_welcome()
     
     
 #welcome = [london_welcome(), singapore_welcome(),san_fran_welcome(), delhi_welcome(), cairo_welcome()]
