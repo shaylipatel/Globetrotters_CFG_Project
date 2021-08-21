@@ -1,5 +1,5 @@
 #### INSTRUCTIONS AND WELCOME NOTES USING DECORATORS
-
+from colorama import Fore, Back, Style
 # We have used a decorator to emphasise the text that was important - so establishing the instructions and then making it very clear in informing the player of each location that they arrive in.
 
 def text_wrapper(func):
@@ -20,33 +20,34 @@ def instructions():
 # Function for when the user enters London.  
 @text_wrapper
 def london_welcome():
-    print('Welcome to sunny London! \n…where the sun shines in between the bursts of rain! Follow the clues to figure out which city Ada went to next.')
-
+    print(Fore.BLACK + Back.WHITE + 'Welcome to sunny London! \n…where the sun shines in between the bursts of rain! Follow the clues to figure out which city Ada went to next.')
+    print(Style.RESET_ALL)
     
 # Function for when the user enters Singapore.
 @text_wrapper
 def singapore_welcome():
-    print('Welcome to Singapore! \nThe city where summer resides all year long with breathtaking skyline views at night of buildings lit to the nines!')
-
+    print(Fore.BLACK + Back.WHITE + 'Welcome to Singapore! \nThe city where summer resides all year long with breathtaking skyline views at night of buildings lit to the nines!')
+    print(Style.RESET_ALL)
     
 # Function for when the user enters San Francisco.
 @text_wrapper
 def san_fran_welcome():
-    print('Welcome to San Francisco! The city of the golden gate! The home of Silicon Valley! \nWhat gold will you find here and where will this currency take you next?')
-
+    print(Fore.BLACK + Back.WHITE + 'Welcome to San Francisco! The city of the golden gate! The home of Silicon Valley! \nWhat gold will you find here and where will this currency take you next?')
+    print(Style.RESET_ALL)
     
 # Function for when the user enters Cairo.
 @text_wrapper
 def cairo_welcome():
-    print('Welcome to the delightful city of Cairo! Careful - Don’t lose your sun hat in the hustle and bustle! \nLet’s see what wisdoms and secrets this ancient city of the Pharaohs is willing to impart with you. \nAnd whether it will give you a treasure or a curse.')
-
+    print(Fore.BLACK + Back.WHITE + 'Welcome to the delightful city of Cairo! Careful - Don’t lose your sun hat in the hustle and bustle! \nLet’s see what wisdoms and secrets this ancient city of the Pharaohs is willing to impart with you. \nAnd whether it will give you a treasure or a curse.')
+    print(Style.RESET_ALL)
     
 # Function for when the user enters Delhi.
 @text_wrapper
 def delhi_welcome():
-    print('Welcome to Delhi! \nThe street markets are lively, the colours vibrant and the food incredible. \nJust watch out for that Dehli Belly… it can’t get in the way of your mission!')
-    
+    print(Fore.BLACK + Back.WHITE + 'Welcome to Delhi! \nThe street markets are lively, the colours vibrant and the food incredible. \nJust watch out for that Dehli Belly… it can’t get in the way of your mission!')
+    print(Style.RESET_ALL)    
 
+    
 if __name__ == '__main__': 
     instructions()
     london_welcome()
