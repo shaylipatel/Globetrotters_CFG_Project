@@ -1,4 +1,4 @@
-from functions import introduction_qs
+from functions import introduction_qs, winners_graphics_box
 from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, delhi_welcome, singapore_welcome
 from location_data import correct_route
 # import time
@@ -22,7 +22,7 @@ def main_logic():
                 else:
                     raise Exception
             except:
-                print('Invalid landmark, please try again!')
+                print('Landmark not found, please try again! Enter 1, 2 or 3... ')
 
             if location.name == correct_route[4].name and int(choice) == 3:
                 break
@@ -88,6 +88,6 @@ def main_logic():
 
 start()
 main_logic()
-print('TEST - You have reached the end')
+winners_graphics_box()
 
 
