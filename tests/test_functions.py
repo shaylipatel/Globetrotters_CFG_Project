@@ -4,7 +4,7 @@ import unittest
 from functions import play_again, introduction_qs
 
 
-class TestStringMethods(unittest.TestCase):
+class TestFunctions(unittest.TestCase):
 
     def test_play_again(self, expected=True):
         # Test the play_again function

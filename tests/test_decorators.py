@@ -4,7 +4,7 @@ import unittest
 from decorators import instructions, london_welcome, san_fran_welcome, singapore_welcome, delhi_welcome, cairo_welcome
 
 
-class TestIntro(unittest.TestCase):
+class TestDecorators(unittest.TestCase):
 
     def test_instructions(self):
         # Test the instructions function
@@ -109,6 +109,25 @@ class TestIntro(unittest.TestCase):
         # Assert
         self.assertEqual(expected, capturedOutput.getvalue())
 
+
+class TestWithoutDecorators(unittest.TestCase):
+
+    def test_instructions(self):
+        # Test the instructions function without expecting the decorator
+
+        # Assume
+        # No decorators expected
+        x = 'Welcome to the hunt for Ada Lovelace! Do you think you have what it takes to find the elusive Ada…? \nFollow the trail of clues she has left behind to see if you can outwit the world’s first ever computer programmer. \n'
+        y = '\nInstructions: \n1. You will start in London. Use the clues to resolve where Ada travelled to next. Pick the correct city and you \nwill be transported there to continue the search. Pick the wrong city and you will return to London to try again \n– and try harder. \n2. Follow the search from city to city. If your intellect matches that of Ada, you may be lucky enough to meet her \nat the end and win the game.\n'
+        expected = x + y
+
+        # Action
+        capturedOutput = io.StringIO()  # Create StringIO object
+        sys.stdout = capturedOutput  # Redirect stdout.
+        instructions()
+
+        # Assert
+        self.assertNotEqual(expected, capturedOutput.getvalue())
 
 if __name__ == '__main__':
     unittest.main()
