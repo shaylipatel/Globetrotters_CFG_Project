@@ -11,9 +11,9 @@ class TestFunctions(unittest.TestCase):
 
         # Action
         capturedOutput = io.StringIO()   # Create StringIO object
-        sys.stdout = capturedOutput  # and redirect stdout
-        play_again()  # call function
-        # check stdout output
+        sys.stdout = capturedOutput  # Redirect stdout
+        play_again()  # Call function
+        # Check stdout output
 
         # Assert
         self.assertTrue(expected, capturedOutput.getvalue())
@@ -23,9 +23,9 @@ class TestFunctions(unittest.TestCase):
 
         # Action
         capturedOutput = io.StringIO()  # Create StringIO object
-        sys.stdout = capturedOutput  # and redirect stdout
-        introduction_qs()  # call function
-        # check stdout output
+        sys.stdout = capturedOutput  # Redirect stdout
+        introduction_qs()  # Call function
+        # Check stdout output
 
         # Assert
         self.assertTrue(expected, capturedOutput.getvalue())

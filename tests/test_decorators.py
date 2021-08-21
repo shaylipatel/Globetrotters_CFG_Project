@@ -35,7 +35,7 @@ class TestDecorators(unittest.TestCase):
 
         # Action
         capturedOutput = io.StringIO()  # Create StringIO object
-        sys.stdout = capturedOutput  # $Redirect stdout.
+        sys.stdout = capturedOutput  # Redirect stdout.
         london_welcome()
 
         # Assert
