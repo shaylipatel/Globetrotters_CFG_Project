@@ -2,17 +2,15 @@
 # from main import play_again
 from tkinter import *
 
-# warm up exercise
+# warm up exercise - a series of if/else statements to get the player into how to play the game and have a bit of fun doing it.
 def introduction_qs():
     name = str(input('Please input your name: Agent '))
     answer = input("Hello Agent " + name.title() + ",the first item required for this game of wits is COURAGE. \nDo you have a heart of solid gold and are you ready to take on the search for Ada Lovelace? (yes/no) ")
     
     if answer.lower().strip() == 'yes' or answer.lower().strip() == 'y':
         answer = input(("Excellent! A half-worthy candidate. \nThe second item required for this mission is an INTELLECT as sharp as the Kohinoor diamond. Is this something you possess young Philosopher? (yes/no) "))
-        
         if answer.lower().strip() == 'yes' or answer.lower().strip() == 'y':
-            answer = input("The first thing to determine is where the trail starts... \nWhere would the world's first computer programmer start her journey... and so where should you? London, New York or Paris? \n")
-            
+            answer = input("The first thing to determine is where the trail starts... \nWhere would the world's first computer programmer start her journey... and so where should you? London, New York or Paris? \n")            
             if answer.lower().strip() == 'london':
                 # Correct location
                 print("Excellent choice! Proceed to London and begin the searching process... the clues are waiting... no dilly-dally-ing.")
@@ -25,7 +23,6 @@ def introduction_qs():
                 # Wrong location
                 print("The old compass has overshot a little... head 350km North-West and try again.")
                 play_again()
-               
             else: 
                 # If user enters a location which was not listed, the game exits.
                 print("You're not quite there yet Sherlock, do try again.")
@@ -61,18 +58,19 @@ def play_again():
 def winners_graphics_box():
     # key down function
     def click():
-        entered_text = textentry.get().title().strip()  # this will collect the text from the text box
+        entered_text = textentry.get().title().strip()  # this will collect the text from the text box, convert to title case and remove any spaces
         output.delete(0.0, END)
+        # try/except to deal with any mistakes or wrongly inputted choices
         try:
             definition = my_compdictionary[entered_text]
         except:
             definition = "O Greedy One, there is no such treasure! Choose from RUBY, EMERALD or SAPPHIRE"
         output.insert(END, definition)
-    ##### main:
+    # main window:
     window = Tk()
     window.title("Where is Ada Lovalace?")
     window.configure(background="black")
-    #### My Photo
+    # photo
     photo1 = PhotoImage(file="globe.gif")
     Label(window, image=photo1, bg="black").grid(row=0, column=0, sticky=N)
     # create label
@@ -88,7 +86,7 @@ def winners_graphics_box():
     # create an output text box
     output = Text(window, width=90, height=8, wrap=WORD, background="white")
     output.grid(row=6, column=0, columnspan=2, sticky=N)
-    # the dictionary
+    # the dictionary - to provide advice based on choice inputted by player/user
     my_compdictionary = {
         'Ruby': 'Don’t Sacrifice Readability:  Whenever you’re writing a piece of code, you should think about what the next developer is going to find when looking at that piece of code. Write that piece of code with the mentality to make it easily understandable and as readable as you can. The ratio of time spent reading code versus writing code is well over 10-to-1. This means that you can save a lot of time in the long run by putting in a little more effort into making your code readable. In order to write readable code try to keep it as simple as possible. Write simple code that everyone can understand.',
         'Emerald': 'Focus On The Business: Some developers are only interested in the technical aspects of their job. They don’t care about the business or the economic factors that justify their job’s existence. Other developers tend to be so focused on learning the tech stack that the business gets out of sight. It’s important to keep the business in mind. Why are you building this? Is what you’re working on creating value for the business or are you spending too much time on something that doesn’t really matter? It’s an important question that you should keep asking yourself.',
@@ -99,11 +97,11 @@ def winners_graphics_box():
     Label(window, text="click to exit", bg="black", fg="white", font="none 10 bold").grid(row=8, column=0, sticky=N)
     # exit function:
     def close_window():
-        window.destroy()
+        window.destroy()  # ensure window is destroyed before program exited
         exit()
     # exit button:
     Button(window, text="Exit", width=14, command=close_window).grid(row=9, column=0, sticky=N)
-    #####run the main loop
-    return window.mainloop()
+    # run the main loop (to run the window)
+    return window.mainloop()  
 
 
