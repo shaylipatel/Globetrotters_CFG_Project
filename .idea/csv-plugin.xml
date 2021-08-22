@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/functions/location_data.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/location_data">
           <value>
             <Attribute>

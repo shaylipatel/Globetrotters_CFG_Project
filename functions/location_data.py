@@ -1,5 +1,5 @@
 import requests  # for API
-from functions.functions import config
+from functions.config1 import api_key
 
 
 class Location:
@@ -19,7 +19,7 @@ class Location:
 
 
     def get_weather(self):
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={config.api_key}&units=metric"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={api_key}&units=metric"
         response = requests.get(url)
         result = response.json()
 
