@@ -2,6 +2,7 @@
 # from main import play_again
 from tkinter import *
 
+
 # Warm up exercise - a series of if/else statements to get the player into how to play the game and have a bit of fun doing it.
 def introduction_qs():
     welcome()
@@ -82,7 +83,7 @@ def winners_graphics_box():
     window.configure(background="black")
 
     # Photo
-    photo1 = PhotoImage(file="../front end/globe.gif")
+    photo1 = PhotoImage(file="./front-end/globe.gif")
     Label(window, image=photo1, bg="black").grid(row=0, column=0, sticky=N)
 
     # Create label
