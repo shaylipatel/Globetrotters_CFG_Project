@@ -199,4 +199,3 @@ correct_route = [London, Singapore, San_Fran, Delhi, Cairo]
 #     for landmark in location.landmarks:
 #         print(landmark)
 #     print(location.location_facts())
-

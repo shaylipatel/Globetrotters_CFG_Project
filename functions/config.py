@@ -5,7 +5,7 @@
 # The key should look like this once an api key as been inserted:  
 # api_key = f'd26034kkd89olo322qw6refe89b99a61'  (please note this is not a working key)
 
-api_key = f'd17071ffc42eba466be2aef2e3b33a32'
+api_key = f'd26034kkd89olo322qw6refe89b99a61'
 
 
 

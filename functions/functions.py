@@ -124,4 +124,3 @@ def winners_graphics_box():
     Button(window, text="Exit", width=14, command=close_window).grid(row=9, column=0, sticky=N)
     # Run the main loop (to run the window)
     return window.mainloop()
-
