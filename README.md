@@ -17,9 +17,7 @@ Visual Image: https://user-images.githubusercontent.com/75260092/130352811-03968
 2.	Install colorama within python if you do not already have this – within the terminal on your machine, type: pip install colorama
 3.	You will need an API key. Register at: https://openweathermap.org/ 
 4.	Once you have an API key, paste this in the config.py file. The file makes clear where this needs to go. Do not change anything else in the file.
-5.	In the functions.py file, revert the url under the get_weather function back to this:
-url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={config.api_key}&units=metric"
-6.	Go to the main.py file and run the game.
+5.	Go to the main.py file and run the game.
 
 **Authors:** 
 Michaela D’Mello, Nosheen Masud, Lana Moroney, Shayli Patel and Catherine Phillips.
