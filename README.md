@@ -1,4 +1,4 @@
-# Globetrotters_CFG_Project - Project status: This game was created as a final project for a bootcamp on software engineering.  Development has stopped completely as we have submitted our project. 
+# Where is Ada Lovelace? A text adventure game  (Globetrotters_CFG_Project)
 
 **Name**
 Where is Ada Lovelace? A text adventure game.
@@ -30,4 +30,6 @@ Michaela D’Mello, Nosheen Masud, Lana Moroney, Shayli Patel and Catherine Phil
 **License**
 This project is open source and all ownership rights are attributed to the authors.
 
+**Project status**
+This game was created as a final project for a bootcamp on software engineering.  Development has stopped completely as we have submitted our project. 
  
