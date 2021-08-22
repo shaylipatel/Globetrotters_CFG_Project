@@ -34,8 +34,8 @@ class Location:
         self.incorrect_landmark1 = incorrect_landmark1
         self.incorrect_landmark2 = incorrect_landmark2
 
-# correct route location info 
-# creating objects where we hard code the data for the locations
+# Correct route location info 
+# Creating objects where we hard code the data for the locations
 London = Location(
     "London",
     "51°30′26″N 0°7′39″W",
@@ -99,11 +99,10 @@ Cairo = Location(
      3: 'You have found Ada Lovelace!'}
     )
 
-# incorrect location info
+# Incorrect location info
 incorrect_location_clues = {1: 'I haven\'t seen who you are looking for',
                             2: 'I don\'t know what you are talking about',
                             3: 'You are in the wrong place, buddy!'}
-
 
 
 Barca = Location(
@@ -150,7 +149,7 @@ Tokyo = Location(
     incorrect_location_clues
 )
 
-# choice tree
+# Choice tree
 # First Location Choice
 London.next_location(
     ['Singapore','London, UK', 'Barcalona, Spain','Rio de Janeiro, Brazil'],
@@ -183,7 +182,7 @@ Delhi.next_location(
     Reykjavik
 )
 
-# get weather
+# Get weather
 London.get_weather()
 Singapore.get_weather()
 San_Fran.get_weather()
