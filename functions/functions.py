@@ -82,7 +82,7 @@ def winners_graphics_box():
     window.configure(background="black")
 
     # Photo
-    photo1 = PhotoImage(file="../front end/globe.gif")
+    photo1 = PhotoImage(file="globe.gif")
     Label(window, image=photo1, bg="black").grid(row=0, column=0, sticky=N)
 
     # Create label
