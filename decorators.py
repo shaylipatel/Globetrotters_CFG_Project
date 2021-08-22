@@ -2,16 +2,16 @@
 
 def text_wrapper(func):
     def inner_wrapper():
-        print("*" * 120)
+        print('\n' + "*" * 145)
         func()
-        print("*" * 120)
+        print("*" * 145 + '\n')
     return inner_wrapper
 
 
 @text_wrapper
 def instructions():
-    print('Welcome to the hunt for Ada Lovelace! Do you think you have what it takes to find the elusive Ada…? \nFollow the trail of clues she has left behind to see if you can outwit the world’s first ever computer programmer. \n')
-    print('Instructions: \n1. You will start in London. Use the clues to resolve where Ada travelled to next. Pick the correct city and you \nwill be transported there to continue the search. Pick the wrong city and you will return to London to try again \n– and try harder. \n2. Follow the search from city to city. If your intellect matches that of Ada, you may be lucky enough to meet her \nat the end and win the game.')
+    print('Welcome to the search for Ada Lovelace! Do you think you have what it takes to find one of the most iconic females in computer science…? \nTry and follow the trail of clues she has left behind at famous landmarks to see if you can catch up the world’s first ever computer programmer. \n')
+    print('Instructions: \n1. Use the clues to find where Ada travelled to. Determine the correct city and you will be transported there to continue the search. \nChoose the wrong city from the list you will need to try again – and try harder. \nIf you would like to see the 3 clues for your current location again, retype the city name into where you would like to go. \n2. Follow the search from city to city using clues found at famous landmarks. If your intellect matches that of Ada, \nyou may be lucky enough to meet her at the end and gain some wisdom.')
 
 # instruction() function repreated, but the decoator is not called => for the unittests
 def instructions1():

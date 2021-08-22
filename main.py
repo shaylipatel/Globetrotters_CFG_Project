@@ -22,7 +22,7 @@ def main_logic():
                 else:
                     raise Exception
             except:
-                print('Landmark not found, please try again! Enter 1, 2 or 3... ')
+                print('\nLandmark not found, please try again! Enter 1, 2 or 3... ')
 
             if location.name == correct_route[4].name and int(choice) == 3:
                 break
@@ -31,7 +31,7 @@ def main_logic():
             for next_location in location.location_list:
                 print(next_location)
             try:
-                choice = input('Where would you like to go? ').title()
+                choice = input('\nWhere would you like to go? ').title()
 
                 if choice.title() == location.correct_location:
                     break
@@ -53,7 +53,7 @@ def main_logic():
 
 
             except:
-                print('Invalid Entry: please try again')
+                print('\nInvalid Entry: please try again\n')
 
     def choose_decorator(location):
         if route_index == 0: #location.name == 'London':
@@ -70,18 +70,18 @@ def main_logic():
     for location in correct_route:
         route_index = correct_route.index(location)
         choose_decorator(location)
-        print('=' * 120)
+        print('=' * 145 + '\n')
         print(location.location_facts())
-        print('=' * 120)
+        print('\n' + '=' * 145 + '\n')
         print('The following landmarks are in {}:'.format(location.name))
         for landmark in location.landmarks:
             print(landmark)
         print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
-        print('=' * 120)
+        print('\n' + '=' * 145 + '\n')
         choose_landmark(location.clues, location.landmarks)
         if location.name == correct_route[4].name:
             break
-        print('Where would you like to travel to next?')
+        print('\nWhere would you like to travel to next?')
         choose_location(location)
 
 
@@ -89,5 +89,3 @@ def main_logic():
 start()
 main_logic()
 winners_graphics_box()
-
-
