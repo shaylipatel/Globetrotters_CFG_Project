@@ -1,7 +1,7 @@
 import io
 import sys
 import unittest
-from decorators import instructions, london_welcome, san_fran_welcome, singapore_welcome, delhi_welcome, cairo_welcome
+from functions.functions import instructions, london_welcome, san_fran_welcome, singapore_welcome, delhi_welcome, cairo_welcome
 
 
 class TestDecorators(unittest.TestCase):

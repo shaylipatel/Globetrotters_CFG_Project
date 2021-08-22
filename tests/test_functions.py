@@ -1,7 +1,7 @@
 import io
 import sys
 import unittest
-from functions import play_again, introduction_qs
+from functions.functions import play_again, introduction_qs
 
 
 class TestFunctions(unittest.TestCase):

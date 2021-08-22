@@ -1,6 +1,6 @@
-from functions import introduction_qs, winners_graphics_box
-from decorators import instructions, london_welcome, san_fran_welcome, cairo_welcome, delhi_welcome, singapore_welcome
-from location_data import correct_route
+from functions.functions import introduction_qs, winners_graphics_box
+from functions.functions import instructions, london_welcome, san_fran_welcome, cairo_welcome, delhi_welcome, singapore_welcome
+from functions.location_data import correct_route
 from colorama import Fore, Back, Style
 
 def start():
