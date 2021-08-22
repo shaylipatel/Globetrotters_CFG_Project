@@ -1,5 +1,6 @@
-import requests
-import config
+import requests  # for API
+from functions.config1 import api_key
+
 
 class Location:
 
@@ -18,7 +19,7 @@ class Location:
 
 
     def get_weather(self):
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={config.api_key}&units=metric"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={self.name}&appid={api_key}&units=metric"
         response = requests.get(url)
         result = response.json()
 
@@ -33,7 +34,8 @@ class Location:
         self.incorrect_landmark1 = incorrect_landmark1
         self.incorrect_landmark2 = incorrect_landmark2
 
-# correct route location info
+# correct route location info 
+# creating objects where we hard code the data for the locations
 London = Location(
     "London",
     "51°30′26″N 0°7′39″W",
@@ -55,7 +57,7 @@ Singapore = Location(
     "English, Malay, Mandarin, Tamil",
     102742,
     ['1. Supertree Grove ',	'2. Gardens by the Bay ', '3. Marina Bay Sands '],
-    {1:'It is the home of one largest and most prominent LGBT communities in the country.' ,
+    {1:'It is the home of one largest and most prominent LGBT communities in the country.' ,    
     2: 'It has a famous Island that lies in the bay, Alkatraz is its name. ',
     3:'In this location, suspended high in the sky and painted red as the colour of extremes...a bridge that is one of the wonders of the modern world and longest in the world' }
     )
