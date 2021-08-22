@@ -73,7 +73,7 @@ def main_logic():
         route_index = correct_route.index(location)
         choose_decorator(location)
         print('=' * 120)
-        print(location.location_facts())
+        location.location_facts()
         print('=' * 120)
         print('The following landmarks are in {}:'.format(location.name))
         for landmark in location.landmarks:
