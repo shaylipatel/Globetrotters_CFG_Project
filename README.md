@@ -14,13 +14,13 @@ Visual Image: https://user-images.githubusercontent.com/75260092/130352811-03968
 
 **Installation:**
 1.	Clone the files from GitHub to your local directory
-2.	Install colorama within python if you do not already have this – within the terminal on your machine, type: pip install colorama
+2.	Install 'colorama' within python if you do not already have this. Instructions: within the Terminal on your machine, type: pip install colorama
 3.	You will need an API key. Register at: https://openweathermap.org/ 
 4.	Once you have an API key, paste this in the config.py file. The file makes clear where this needs to go. Do not change anything else in the file.
 5.	Go to the main.py file and run the game.
 
 **Authors:** 
-Michaela D’Mello, Nosheen Masud, Lana Moroney, Shayli Patel and Catherine Phillips.
+Nosheen Masud, Shayli Patel, Catherine Phillips, Lana Moroney and Michaela D’Mello.
 
 **License:**
 This project is open source and all ownership rights are attributed to the authors.
