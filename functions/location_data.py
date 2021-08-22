@@ -1,5 +1,5 @@
 import requests  # for API
-from functions.config1 import api_key
+from functions.config import api_key
 
 
 class Location:
