@@ -1,5 +1,5 @@
 import requests  # for API
-import config    # to import API key
+import config   # to import API key
 
 class Location:
 
