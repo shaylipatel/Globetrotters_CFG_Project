@@ -48,7 +48,8 @@ def main_logic():
                     raise Exception
                 if incorrect_landmark == location.incorrect_landmark1 or incorrect_landmark == location.incorrect_landmark2:
                     for landmark in incorrect_landmark.landmarks:
-                        print(landmark)
+                        print(Fore.BLACK + Back.WHITE + Style.BRIGHT + landmark)
+                        print(Style.RESET_ALL)
                     print('Enter the landmark number to see if anyone has seen her. \nTo move to the next location, enter NEXT')
                     choose_landmark(location.incorrect_landmark1.clues, location.incorrect_landmark1.landmarks)
 
