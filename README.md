@@ -10,11 +10,13 @@ Visual Image: https://user-images.githubusercontent.com/75260092/130352811-03968
 **Requirements:**
 1.	This game has been designed for Python 3 and will only run in Python 3.
 2.	This game requires and API key from https://openweathermap.org/ - full details in installation.
-3.	Installation of Python packages ‘colorama’ and ‘tkinter’ (tkinter is pre-installed with Python 3)
+3.	Installation of Python ‘colorama’ and ‘requests’ libraries, plus the ‘tkinter’ package (tkinter is pre-installed with Python 3)
 
 **Installation:**
 1.	Clone the files from GitHub to your local directory
-2.	Install 'colorama' within python if you do not already have this. Instructions: within the Terminal on your machine, type: pip install colorama
+2.	Install 'colorama' and ‘requests’ libraries within python if you do not already have these. Instructions: within the Terminal on your machine, type: 
+     - pip install colorama
+     - pip install requests
 3.	You will need an API key. Register at: https://openweathermap.org/ 
 4.	Once you have an API key, paste this in the config.py file. The file makes clear where this needs to go. Do not change anything else in the file.
 5.	Go to the main.py file and run the game.
